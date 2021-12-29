@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>直线圆弧切线圆弧</title>
+	</head>
+	<body>
+    <canvas id="canvas"></canvas>
+    
+    <script type="text/javascript">
+      const canvas = document.getElementById('canvas');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      
+      // 添加画笔
+      const ctx = canvas.getContext('2d');
+      /*
+        1、开始建立路径：beginPath()
+        2、向路径集合中添加子路径：
+          moveTo(x, y) 形状; closePath() 可选;
+          moveTo(x, y) 形状; closePath() 可选;
+          moveTo(x, y) 形状; closePath() 可选;
+        3、显示路径：填充fill(), 描边stroke();
+      */
+      // 直线
+      ctx.beginPath();
+      ctx.moveTo(50, 50);
+      ctx.lineTo(400, 50);
+      ctx.lineTo(400, 200);
+      ctx.closePath();
+      ctx.stroke();
+      
+      // 圆弧  arc(x, y, 半径, 开始弧度, 结束弧度, 方向)
+      ctx.beginPath();
+      ctx.arc(400, 500, 200, 0, Math.PI*3/2);
+      // 不加moveTo默认是一个子节点
+      ctx.moveTo(400+200,700); 
+      ctx.arc(400, 700, 200, 0, Math.PI*3/2);
+      ctx.stroke();
+      
+      // 切线圆弧 arcTo(x1, y1, x2, y2, 半径)
+      ctx.beginPath();
+      ctx.moveTo(600, 50);
+      ctx.arcTo(800,50,800,400,100);
+      ctx.stroke();
+    </script>
+	</body>
+</html>
