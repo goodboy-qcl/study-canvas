@@ -16,16 +16,40 @@
       
       // 二次贝塞尔曲线 quadraCurverTo(cpx1, cpy1, x, y); 控制点，结尾点
       // 辅助线
-      ctx.beginPath();
-      ctx.moveTo(50,50);
-      ctx.lineTo(400, 50);
-      ctx.lineTo(400, 200);
-      ctx.stroke();
-      // 贝塞尔曲线
-      ctx.beginPath();
-      ctx.moveTo(50, 50);
-      ctx.quadraticCurveTo(400, 50, 400, 200);
-      ctx.stroke();
+      // ctx.beginPath();
+      // ctx.moveTo(50,50);
+      // ctx.lineTo(400, 50);
+      // ctx.lineTo(400, 200);
+      // ctx.stroke();
+      // // 贝塞尔曲线
+      // ctx.beginPath();
+      // ctx.moveTo(50, 50);
+      // ctx.quadraticCurveTo(400, 50, 400, 200);
+      // ctx.stroke();
+      
+      // 三次贝塞尔曲线 bezierCurverTo(cpx1,cpy1,cpx2,cpy2,x,y)
+      // 辅助线
+      // ctx.beginPath();
+      // ctx.moveTo(50,50);
+      // ctx.lineTo(400, 50);
+      // ctx.lineTo(400, 200);
+      // ctx.lineTo(700, 200);
+      // ctx.stroke();
+      
+      // ctx.beginPath();
+      // ctx.moveTo(50, 50);
+      // ctx.bezierCurveTo(
+      //   400,50,
+      //   400,200,
+      //   700,200
+      // );
+      // ctx.stroke();
+      
+      // 矩形： rect(x,y,w,h);
+      ctx.beginPath(); //具有清理路径集合的功能
+      ctx.rect(50,50,400,200);
+      ctx.rect(50,350,400,200);
+      ctx.fill();
     </script>
 	</body>
 </html>
