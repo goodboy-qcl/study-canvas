@@ -19,8 +19,8 @@
       canvas.height = window.innerHeight;
       // 创建画笔
       const ctx = canvas.getContext('2d');
-      // 填充色
-      ctx.fillStyle = 'maroon';
+      // 填充色  必须在图形之前
+      ctx.fillStyle = 'maroon'; 
       // 填充矩形方法：fillRect(x, y, w, h)
       ctx.fillRect(50, 50, 200, 100);
       // 描边宽度 (内外描边各一半)
