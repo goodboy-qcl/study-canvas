@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // 画笔
+    const ctx = canvas.getContext('2d');
+
+    // 变换  位移坐标原点
+    ctx.translate(canvas.width/2, canvas.height/2);
+
+    // 颜色
+    // ctx.fillStyle = '#00acec';
+    ctx.fillStyle = 'red';
+
+    ctx.beginPath();
+    // 指定起点，建立子路径
+    ctx.moveTo(0, 0);
+    // 绘制二次贝塞尔曲线
+    ctx.quadraticCurveTo(
+        50,-50,
+        50,-100
+    );
+    // 绘制圆弧
+    ctx.arc(0, -100, 50, 0, Math.PI, true);
+
+    // 绘制二次贝塞尔曲线
+    ctx.quadraticCurveTo(
+        -50,-50,
+        0,0
+    )
+
+    // 显示路径
+    ctx.stroke();
+
+    ctx.fill();
+
+  </script>
+</body>
+</html>
